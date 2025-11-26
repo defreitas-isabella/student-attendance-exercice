@@ -120,12 +120,17 @@ header {
 }
 
 main {
-    max-width: 700px;
     margin: var(--space-lg) auto;
     background-color: var(--color-text-light);
     padding: var(--space-lg);
     border-radius: var(--radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: clamp(300px, 90%, 700px);
+}
+
+main h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 ul.student-list {
@@ -151,7 +156,7 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.btn-submit {
+button {
     display: block;
     width: 100%;
     margin-top: var(--space-lg);
@@ -165,6 +170,96 @@ input[type="checkbox"] {
     transition: background-color var(--transition-speed) ease;
 }
 
-.btn-submit:hover {
-    background-color: #0056b3;
+button:hover {
+    background-color: var(--color-primary);
+}
+
+
+.hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+.currentStudent {
+    margin-top: var(--space-lg);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    color: var(--color-primary);;
+}
+
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ordre visuel : nav remonte AVANT tout */
+.page-nav {
+    order: -1;
+}
+
+/* header */
+.page-header {
+    background: var(--color-primary);
+    color: var(--color-text-light);
+    padding: var(--space-lg) 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: var(--font-size-h1);
+    margin: 0;
+}
+
+/* main */
+.page-main {
+    flex-grow: 1;
+}
+
+.page-footer {
+    text-align: center;
+    padding: var(--space-md);
+    color: var(--color-secondary);
+    font-size: 0.9rem;
+}
+
+.page-nav {
+    background: var(--color-primary);
+}
+
+.page-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: 0;
+    margin: 0;
+}
+
+.page-nav a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius);
+    transition: background-color var(--transition-speed);
+    display: block;
+}
+
+.page-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.page-nav a.active {
+    background-color: rgba(255, 255, 255, 0.25);
+    font-weight: bold;
 }
