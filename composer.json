@@ -1,0 +1,13 @@
+{
+    "name": "dfsis/student-attendance-exercice",
+    "description": "A small app for managing the attendances of the students",
+    "require": {
+        "php": "8.5"
+    },
+    "authors": [
+        {
+            "name": "defreitas-isabella",
+            "email": "isabella.defreitas@student.hepl.be"
+        }
+    ]
+}
